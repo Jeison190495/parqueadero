@@ -1,19 +1,19 @@
 import datetime
-#import cx_Oracle
-import psycopg2
+import cx_Oracle
+#import psycopg2
 
 #conectar base dedatos oracle
-"""
+
 def conectar_oracle():
     try:
-        connection = cx_Oracle.connect("SYSTEM", "Sistemas.2023", "localhost/1521")
+        connection = cx_Oracle.connect("SYSTEM", "Sistemas.2023", "localhost:1521/xe")
         print("Conectado a Oracle")
         return connection
     except cx_Oracle.DatabaseError as e:
         print(f"Error al conectar a Oracle: {e}")
-"""
+
 # Conectar a la base de datos PostgreSQL
-def conectar_postgres():
+'''def conectar_postgres():
     try:
         connection = psycopg2.connect(
             dbname="nombre_db", 
@@ -25,17 +25,17 @@ def conectar_postgres():
         print("Conectado a PostgreSQL")
         return connection
     except psycopg2.DatabaseError as e:
-        print(f"Error al conectar a PostgreSQL: {e}")
+        print(f"Error al conectar a PostgreSQL: {e}")'''
 
 # Uso de las conexiones
-"""oracle_conn = conectar_oracle()"""
-postgres_conn = conectar_postgres()
+oracle_conn = conectar_oracle()
+#postgres_conn = conectar_postgres()
 
 # No olvides cerrar las conexiones al finalizar
-"""if oracle_conn:
-    oracle_conn.close()"""
-if postgres_conn:
-    postgres_conn.close()
+if oracle_conn:
+    oracle_conn.close()
+#if postgres_conn:
+ #   postgres_conn.close()
 
 
 
