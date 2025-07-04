@@ -1,0 +1,25 @@
+#dar nombre a la accion
+name: prueba
+#on palabra reservada, cuando se lanza la accion como cada vez que se haga push en alguna rama o en alguna hora o una pushh o cuadno quiera
+on: 
+#schedule es para ejecutar o mandar o crear un evento si quiere que se ejecute cuando yo le diga 
+  schedule: 
+#cron es para programar que se ejecute de fomr automatica, si se deja en '*****'  se ejecutaria cada minuto 
+   - cron: '30 5 15 3 4' #' minutos hora dia mes diadelasemana'
+#push cuando se lanze por un push 
+  push: 
+#en una rama especifica  
+    branches: [main]
+#jobs son los pasos
+jobs:
+#build paralabra reserbada, proceso  de construccion
+  build:
+#runs-on correr en una maquina, aca se configura con las especificaciones que se quiera pero mas de 1 core cobran
+    runs-on: ubuntu-latest
+#steps pasos pueden ser en paralelo 
+    steps:
+#name se le puede dar nombres a cada uses no es obligatorio pero sirve para saber o identificar como esta organizado 
+#- uses obtiene el codigo del repositorio como buscar un script que esta guardado en algun lado del repositorio, o usar alguna accion ya creada de algun respositorio EJ: actions/checkout@v4
+      - uses: actions/checkout@v4
+#- run corre el script que tengamos creado si es necesario buscarlo en carpta  se hace con ./carpta/script
+      - run: script
