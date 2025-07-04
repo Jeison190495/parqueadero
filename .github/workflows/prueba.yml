@@ -3,9 +3,9 @@ name: prueba
 #on palabra reservada, cuando se lanza la accion como cada vez que se haga push en alguna rama o en alguna hora o una pushh o cuadno quiera
 on: 
 #schedule es para ejecutar o mandar o crear un evento si quiere que se ejecute cuando yo le diga 
-  schedule: 
+  #schedule: 
 #cron es para programar que se ejecute de fomr automatica, si se deja en '*****'  se ejecutaria cada minuto 
-   - cron: '30 5 15 3 4' #' minutos hora dia mes diadelasemana'
+   #- cron: '30 5 15 3 4' #' minutos hora dia mes diadelasemana'
 #push cuando se lanze por un push 
   push: 
 #en una rama especifica  
